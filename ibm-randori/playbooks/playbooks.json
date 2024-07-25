@@ -1,0 +1,434 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "f728bee1-767f-4d0c-bd33-18daeaeb45ef",
+      "@type": "WorkflowCollection",
+      "name": "Sample - IBM Randori - 1.0.0",
+      "description": "IBM Randori is an attack surface management SaaS that monitors internal and external attack surfaces for unexpected changes, blind spots, misconfigurations, and process failures. This connector facilitates automated operations to fetch network, target, service etc.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Ibm",
+        "ibm-randori"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "dfdf6ce3-972f-4b6c-bfa6-49aea94721d5",
+          "collection": "/api/3/workflow_collections/f728bee1-767f-4d0c-bd33-18daeaeb45ef",
+          "triggerLimit": null,
+          "description": "Retrieves IP objects based on the query, limit, offset parameter you have specified.",
+          "name": "Get IP Objects",
+          "tag": "#IBM Randori",
+          "recordTags": [
+            "Ibm",
+            "ibm-randori"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/27e44b1e-e2bb-46d3-8938-2de0149a75e2",
+          "steps": [
+            {
+              "uuid": "27e44b1e-e2bb-46d3-8938-2de0149a75e2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c426b26d-7035-4d8d-afa0-7aded8e4e292",
+                "title": "IBM Randori: Get IP Objects",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9b0616fa-91c8-4793-9592-3b8c1852100a",
+              "@type": "WorkflowStep",
+              "name": "Get IP Objects",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Randori",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "offset": 0
+                },
+                "version": "1.0.0",
+                "connector": "ibm-randori",
+                "operation": "get_ips",
+                "operationTitle": "Get IP Objects",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c6d82418-8511-4600-a558-6b916ce8bf36",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get IP Objects",
+              "sourceStep": "/api/3/workflow_steps/27e44b1e-e2bb-46d3-8938-2de0149a75e2",
+              "targetStep": "/api/3/workflow_steps/9b0616fa-91c8-4793-9592-3b8c1852100a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "286f4923-da27-484f-8199-9e9fd7458e36",
+          "collection": "/api/3/workflow_collections/f728bee1-767f-4d0c-bd33-18daeaeb45ef",
+          "triggerLimit": null,
+          "description": "Retrieves hostnames based on the query, limit, offset parameter you have specified.",
+          "name": "Get Hostnames",
+          "tag": "#IBM Randori",
+          "recordTags": [
+            "Ibm",
+            "ibm-randori"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5c4945a5-79a8-4e1c-b977-8b0863b2e388",
+          "steps": [
+            {
+              "uuid": "5c4945a5-79a8-4e1c-b977-8b0863b2e388",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "2ce438e1-4381-4f0b-a0b9-317db6509020",
+                "title": "IBM Randori: Get Hostnames",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4980b56e-fc66-453b-80e9-96bcd4986e6b",
+              "@type": "WorkflowStep",
+              "name": "Get Hostnames",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Randori",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "offset": 0
+                },
+                "version": "1.0.0",
+                "connector": "ibm-randori",
+                "operation": "get_hostnames",
+                "operationTitle": "Get Hostnames",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0d5e255b-760a-4734-a8cc-072786cfc521",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Hostnames",
+              "sourceStep": "/api/3/workflow_steps/5c4945a5-79a8-4e1c-b977-8b0863b2e388",
+              "targetStep": "/api/3/workflow_steps/4980b56e-fc66-453b-80e9-96bcd4986e6b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "49fd4410-0f93-420a-bb4c-9e95b6f35271",
+          "collection": "/api/3/workflow_collections/f728bee1-767f-4d0c-bd33-18daeaeb45ef",
+          "triggerLimit": null,
+          "description": "Retrieves networks based on the query, limit, offset parameter you have specified.",
+          "name": "Get Networks",
+          "tag": "#IBM Randori",
+          "recordTags": [
+            "Ibm",
+            "ibm-randori"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8ea25f84-9fc8-44a1-b38a-ef928b398e7e",
+          "steps": [
+            {
+              "uuid": "8ea25f84-9fc8-44a1-b38a-ef928b398e7e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6d10bba9-71f3-40a3-a609-4ebd417226e6",
+                "title": "IBM Randori: Get Networks",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7323619a-23b8-4603-b0cc-aad491189fc7",
+              "@type": "WorkflowStep",
+              "name": "Get Networks",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Randori",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "offset": 0
+                },
+                "version": "1.0.0",
+                "connector": "ibm-randori",
+                "operation": "get_networks",
+                "operationTitle": "Get Networks",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d79d2070-61ea-4b08-b725-7fdb2e5f275e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Networks",
+              "sourceStep": "/api/3/workflow_steps/8ea25f84-9fc8-44a1-b38a-ef928b398e7e",
+              "targetStep": "/api/3/workflow_steps/7323619a-23b8-4603-b0cc-aad491189fc7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "17d15949-c7b8-4100-8e6f-6fb304b7b27c",
+          "collection": "/api/3/workflow_collections/f728bee1-767f-4d0c-bd33-18daeaeb45ef",
+          "triggerLimit": null,
+          "description": "Retrieves targets based on the query, limit, offset parameter you have specified.",
+          "name": "Get Targets",
+          "tag": "#IBM Randori",
+          "recordTags": [
+            "Ibm",
+            "ibm-randori"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/51da3354-ae7e-4f95-ac1b-f948cf07d70f",
+          "steps": [
+            {
+              "uuid": "51da3354-ae7e-4f95-ac1b-f948cf07d70f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "54172795-7bc5-417a-8fa2-affbe6f2b051",
+                "title": "IBM Randori: Get Targets",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "0ccc401d-026e-47b9-b61d-cf839639f275",
+              "@type": "WorkflowStep",
+              "name": "Get Targets",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Randori",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "offset": 0
+                },
+                "version": "1.0.0",
+                "connector": "ibm-randori",
+                "operation": "get_targets",
+                "operationTitle": "Get Targets",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "6d192a8f-f226-4831-9f22-e0274dc9a66d",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Targets",
+              "sourceStep": "/api/3/workflow_steps/51da3354-ae7e-4f95-ac1b-f948cf07d70f",
+              "targetStep": "/api/3/workflow_steps/0ccc401d-026e-47b9-b61d-cf839639f275"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c4b3cafe-9750-47e3-9192-0cc5bb876195",
+          "collection": "/api/3/workflow_collections/f728bee1-767f-4d0c-bd33-18daeaeb45ef",
+          "triggerLimit": null,
+          "description": "Retrieves services based on the query, limit, offset parameter you have specified.",
+          "name": "Get Services",
+          "tag": "#IBM Randori",
+          "recordTags": [
+            "Ibm",
+            "ibm-randori"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e569cd7a-44e6-4f89-b581-d3da82a33326",
+          "steps": [
+            {
+              "uuid": "e569cd7a-44e6-4f89-b581-d3da82a33326",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "53abe09b-35fd-4474-9b41-f5b0255c0e5e",
+                "title": "IBM Randori: Get Services",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "0818449d-a3ba-428a-9a32-0b19bc1f0ce6",
+              "@type": "WorkflowStep",
+              "name": "Get Services",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Randori",
+                "config": "''",
+                "params": {
+                  "limit": 50,
+                  "offset": 0
+                },
+                "version": "1.0.0",
+                "connector": "ibm-randori",
+                "operation": "get_services",
+                "operationTitle": "Get Services",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7922875a-dde2-419e-a3cc-ef98e43f59d7",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Services",
+              "sourceStep": "/api/3/workflow_steps/e569cd7a-44e6-4f89-b581-d3da82a33326",
+              "targetStep": "/api/3/workflow_steps/0818449d-a3ba-428a-9a32-0b19bc1f0ce6"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -26,8 +26,16 @@ class IBMRandori:
     def make_request(self, endpoint, params=None, data=None, method='GET'):
         try:
             headers = {'Authorization': self.api_token, 'Content-Type': 'application/json'}
-            url = '{0}{1}{2}'.format(self.base_url, '/recon/api/v1/', endpoint)
+            url = '{0}{1}{2}'.format(self.base_url, '/recon/api/v1', endpoint)
             logger.info('Request URL {0}'.format(url))
+
+            # CURL UTILS CODE
+            try:
+                from connectors.debug_utils.curl_script import make_curl
+                make_curl(method, endpoint, headers=headers, params=params, data=data, verify_ssl=self.verify_ssl)
+            except Exception as err:
+                logger.error(f"Error in curl utils: {str(err)}")
+
             response = requests.request(method, url, data=data, headers=headers, verify=self.verify_ssl, params=params)
 
             if response.status_code in [200, 201, 204, 206]:
@@ -73,7 +81,7 @@ def get_ips(config, params):
     params = obj.build_payload(params)
     if params.get('q'):
         params['q'] = obj.encode_query(params.get('q'))
-    response = obj.make_request(endpoint='/recon/api/v1/ip', params=params)
+    response = obj.make_request(endpoint='/ip', params=params)
     return response
 
 
@@ -82,7 +90,7 @@ def get_hostnames(config, params):
     params = obj.build_payload(params)
     if params.get('q'):
         params['q'] = obj.encode_query(params.get('q'))
-    response = obj.make_request(endpoint='/recon/api/v1/hostname', params=params)
+    response = obj.make_request(endpoint='/hostname', params=params)
     return response
 
 
@@ -91,7 +99,7 @@ def get_networks(config, params):
     params = obj.build_payload(params)
     if params.get('q'):
         params['q'] = obj.encode_query(params.get('q'))
-    response = obj.make_request(endpoint='/recon/api/v1/network', params=params)
+    response = obj.make_request(endpoint='/network', params=params)
     return response
 
 
@@ -100,7 +108,7 @@ def get_targets(config, params):
     params = obj.build_payload(params)
     if params.get('q'):
         params['q'] = obj.encode_query(params.get('q'))
-    response = obj.make_request(endpoint='/recon/api/v1/target', params=params)
+    response = obj.make_request(endpoint='/target', params=params)
     return response
 
 
@@ -109,11 +117,11 @@ def get_services(config, params):
     params = obj.build_payload(params)
     if params.get('q'):
         params['q'] = obj.encode_query(params.get('q'))
-    response = obj.make_request(endpoint='/recon/api/v1/service', params=params)
+    response = obj.make_request(endpoint='/service', params=params)
     return response
 
 
-def check_health(config):
+def _check_health(config):
     try:
         obj = IBMRandori(config)
         server_response = obj.make_request(endpoint='/organizations')

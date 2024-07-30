@@ -6,7 +6,7 @@ Copyright end
 """
 
 from connectors.core.connector import Connector, get_logger, ConnectorError
-from .operations import operations, check_health
+from .operations import operations, _check_health
 
 logger = get_logger('ibm_randori')
 
@@ -23,4 +23,4 @@ class IBMRandori(Connector):
 
     def check_health(self, config):
         logger.info('starting health check')
-        return check_health(config)
+        return _check_health(config)

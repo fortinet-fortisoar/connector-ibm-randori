@@ -10,7 +10,7 @@
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-ibm-randori/blob/release/1.0.0/docs/ibm-randori.md",
   "configuration": {
     "fields": [
       {
@@ -36,7 +36,7 @@
       },
       {
         "title": "Verify SSL",
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not. <br />By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
         "required": false,
         "editable": true,
         "visible": true,
@@ -68,7 +68,8 @@
           "visible": true,
           "type": "json",
           "name": "q",
-          "tooltip": "Specify the query to retrieve the list of IP objects. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve the list of IP objects.",
           "description": "Specify the query to retrieve the list of IP objects from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
         },
         {
@@ -96,8 +97,106 @@
       ]
     },
     {
+      "operation": "get_ips_for_hostname",
+      "title": "Get IPs for Hostname",
+      "description": "Retrieves IPs for hostname based on the query, limit, offset parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_ips_for_hostname",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "q",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve the IPs for hostname.",
+          "description": "Specify the query to retrieve the IPs for hostname from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 50,
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
+          "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
+      "operation": "get_ips_for_network",
+      "title": "Get IPs for Network",
+      "description": "Retrieves IPs for network based on the query, limit, offset parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_ips_for_network",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "q",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve the IPs for network.",
+          "description": "Specify the query to retrieve the IPs for network from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 50,
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
+          "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
       "operation": "get_hostnames",
-      "title": "Get Hostnames",
+      "title": "Get Hostname List",
       "description": "Retrieves hostnames based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_hostnames",
@@ -116,7 +215,8 @@
           "visible": true,
           "type": "json",
           "name": "q",
-          "tooltip": "Specify the query to retrieve the list of hostnames. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve the list of hostnames.",
           "description": "Specify the query to retrieve the list of hostnames from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
         },
         {
@@ -145,7 +245,7 @@
     },
     {
       "operation": "get_networks",
-      "title": "Get Networks",
+      "title": "Get Network List",
       "description": "Retrieves networks based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_networks",
@@ -164,7 +264,8 @@
           "visible": true,
           "type": "json",
           "name": "q",
-          "tooltip": "Specify the query to retrieve the list of networks. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve the list of networks.",
           "description": "Specify the query to retrieve the list of networks from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
         },
         {
@@ -193,7 +294,7 @@
     },
     {
       "operation": "get_targets",
-      "title": "Get Targets",
+      "title": "Get Target List",
       "description": "Retrieves targets based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_targets",
@@ -212,7 +313,8 @@
           "visible": true,
           "type": "json",
           "name": "q",
-          "tooltip": "Specify the query to retrieve the list of targets. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve the list of targets.",
           "description": "Specify the query to retrieve the list of targets from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
         },
         {
@@ -241,7 +343,7 @@
     },
     {
       "operation": "get_services",
-      "title": "Get Services",
+      "title": "Get Service List",
       "description": "Retrieves services based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_services",
@@ -260,7 +362,8 @@
           "visible": true,
           "type": "json",
           "name": "q",
-          "tooltip": "Specify the query to retrieve the list of services. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve the list of services.",
           "description": "Specify the query to retrieve the list of services from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
         },
         {
@@ -284,6 +387,277 @@
           "value": 0,
           "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
           "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
+      "operation": "get_all_detections_for_target",
+      "title": "Get All Detections for Target",
+      "description": "Retrieves all detections for target objects based on the query, limit, offset parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_all_detections_for_target",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "q",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve all detections for target.",
+          "description": "Specify the query to retrieve all detections for target from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 50,
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
+          "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
+      "operation": "get_single_detection_for_target",
+      "title": "Get Single Detection for Target",
+      "description": "Retrieves single detection for target objects based on the query, limit, offset parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_single_detection_for_target",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "q",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve single detection for target.",
+          "description": "Specify the query to retrieve single detection for target from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 50,
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
+          "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
+      "operation": "get_policy",
+      "title": "Get Policy List",
+      "description": "Retrieves policies based on the query, limit, offset parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_policy",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "q",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve policies.",
+          "description": "Specify the query to retrieve policies from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 50,
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
+          "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
+      "operation": "get_report",
+      "title": "Get Report List",
+      "description": "Retrieves report based on the query, limit, offset parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_report",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "q",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve report.",
+          "description": "Specify the query to retrieve report from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 50,
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
+          "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
+      "operation": "get_statistics",
+      "title": "Get Statistics List",
+      "description": "Retrieves statistics based on the query, limit, offset parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_statistics",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "q",
+          "value": "{\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}",
+          "tooltip": "Specify the query to retrieve statistics.",
+          "description": "Specify the query to retrieve statistics from IBM Randori. e.g., {\n  \"condition\": \"AND\",\n  \"rules\": [\n    {\n      \"field\": \"table.confidence\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 60\n    },\n    {\n      \"field\": \"table.target_temptation\",\n      \"operator\": \"greater_or_equal\",\n      \"value\": 15\n    }\n  ]\n}"
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 50,
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
+          "description": "Index of the first item to be returned by this operation. By default, this is set as 0 and the minimum supported value is 0."
+        }
+      ]
+    },
+    {
+      "operation": "get_artifact",
+      "title": "Get Artifact by UUID",
+      "description": "Retrieves artifact based on the artifact UUID parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_artifact",
+      "output_schema": {
+        "count": "",
+        "data": "",
+        "offset": "",
+        "total": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Artifact UUID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "artifact_uuid",
+          "tooltip": "The maximum number of records to return. Default: 50 Min: 1 Max: 2000",
+          "description": "Maximum number of records that this operation should return. Values supported are: Default: 50 Min: 1 Max: 2000"
         }
       ]
     }

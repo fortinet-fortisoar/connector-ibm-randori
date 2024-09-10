@@ -196,7 +196,7 @@
     },
     {
       "operation": "get_hostnames",
-      "title": "Get Hostnames",
+      "title": "Get Hostname List",
       "description": "Retrieves hostnames based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_hostnames",
@@ -245,7 +245,7 @@
     },
     {
       "operation": "get_networks",
-      "title": "Get Networks",
+      "title": "Get Network List",
       "description": "Retrieves networks based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_networks",
@@ -294,7 +294,7 @@
     },
     {
       "operation": "get_targets",
-      "title": "Get Targets",
+      "title": "Get Target List",
       "description": "Retrieves targets based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_targets",
@@ -343,7 +343,7 @@
     },
     {
       "operation": "get_services",
-      "title": "Get Services",
+      "title": "Get Service List",
       "description": "Retrieves services based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_services",
@@ -490,7 +490,7 @@
     },
     {
       "operation": "get_policy",
-      "title": "Get Policy",
+      "title": "Get Policy List",
       "description": "Retrieves policies based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_policy",
@@ -539,7 +539,7 @@
     },
     {
       "operation": "get_report",
-      "title": "Get Report",
+      "title": "Get Report List",
       "description": "Retrieves report based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_report",
@@ -588,7 +588,7 @@
     },
     {
       "operation": "get_statistics",
-      "title": "Get Statistics",
+      "title": "Get Statistics List",
       "description": "Retrieves statistics based on the query, limit, offset parameter you have specified.",
       "category": "investigation",
       "annotation": "get_statistics",
@@ -637,7 +637,7 @@
     },
     {
       "operation": "get_artifact",
-      "title": "Get Artifact",
+      "title": "Get Artifact by UUID",
       "description": "Retrieves artifact based on the artifact UUID parameter you have specified.",
       "category": "investigation",
       "annotation": "get_artifact",

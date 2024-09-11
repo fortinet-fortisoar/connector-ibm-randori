@@ -268,7 +268,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves hostnames based on the query, limit, offset parameter you have specified.",
-          "name": "Get Hostnames",
+          "name": "Get Hostname List",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -289,7 +289,7 @@
               "status": null,
               "arguments": {
                 "route": "be455cd6-f897-41cc-80bc-2013a4c2a5ae",
-                "title": "IBM Randori: Get Hostnames",
+                "title": "IBM Randori: Get Hostname List",
                 "resources": [
                   "alerts"
                 ],
@@ -310,7 +310,7 @@
             {
               "uuid": "3b511055-44b6-4963-bf03-6240b464f208",
               "@type": "WorkflowStep",
-              "name": "Get Hostnames",
+              "name": "Get Hostname List",
               "description": null,
               "status": null,
               "arguments": {
@@ -323,7 +323,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_hostnames",
-                "operationTitle": "Get Hostnames",
+                "operationTitle": "Get Hostname List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -339,7 +339,7 @@
               "uuid": "bb00ff33-94ab-4f0e-b24c-ce7c33f095d3",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Hostnames",
+              "name": "Start-> Get Hostname List",
               "sourceStep": "/api/3/workflow_steps/d1669c68-475e-4ea5-84b3-2b501d42b2f0",
               "targetStep": "/api/3/workflow_steps/3b511055-44b6-4963-bf03-6240b464f208"
             }
@@ -351,7 +351,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves networks based on the query, limit, offset parameter you have specified.",
-          "name": "Get Networks",
+          "name": "Get Network List",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -372,7 +372,7 @@
               "status": null,
               "arguments": {
                 "route": "8af110bd-ffa3-4677-8327-360517c2aa8c",
-                "title": "IBM Randori: Get Networks",
+                "title": "IBM Randori: Get Network List",
                 "resources": [
                   "alerts"
                 ],
@@ -393,7 +393,7 @@
             {
               "uuid": "0322b270-6892-47dc-bf8d-a2bea2a87045",
               "@type": "WorkflowStep",
-              "name": "Get Networks",
+              "name": "Get Network List",
               "description": null,
               "status": null,
               "arguments": {
@@ -406,7 +406,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_networks",
-                "operationTitle": "Get Networks",
+                "operationTitle": "Get Network List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -422,7 +422,7 @@
               "uuid": "1cf938c5-a632-477c-ac3f-8398c98da341",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Networks",
+              "name": "Start-> Get Network List",
               "sourceStep": "/api/3/workflow_steps/56d83073-fdc1-4d91-8ecb-f23ee4c0a90c",
               "targetStep": "/api/3/workflow_steps/0322b270-6892-47dc-bf8d-a2bea2a87045"
             }
@@ -434,7 +434,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves targets based on the query, limit, offset parameter you have specified.",
-          "name": "Get Targets",
+          "name": "Get Target List",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -455,7 +455,7 @@
               "status": null,
               "arguments": {
                 "route": "e63011b1-2d6a-47f8-8ab4-dc6d3f672590",
-                "title": "IBM Randori: Get Targets",
+                "title": "IBM Randori: Get Target List",
                 "resources": [
                   "alerts"
                 ],
@@ -476,7 +476,7 @@
             {
               "uuid": "c6eed108-6d05-4e87-94b9-37447b309fdd",
               "@type": "WorkflowStep",
-              "name": "Get Targets",
+              "name": "Get Target List",
               "description": null,
               "status": null,
               "arguments": {
@@ -489,7 +489,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_targets",
-                "operationTitle": "Get Targets",
+                "operationTitle": "Get Target List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -505,7 +505,7 @@
               "uuid": "6b8c10a6-19c8-4cd5-83f4-5120535076bd",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Targets",
+              "name": "Start-> Get Target List",
               "sourceStep": "/api/3/workflow_steps/19a0fda2-390a-43ea-8810-18a2718b715e",
               "targetStep": "/api/3/workflow_steps/c6eed108-6d05-4e87-94b9-37447b309fdd"
             }
@@ -517,7 +517,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves services based on the query, limit, offset parameter you have specified.",
-          "name": "Get Services",
+          "name": "Get Service List",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -538,7 +538,7 @@
               "status": null,
               "arguments": {
                 "route": "5e377aec-62ed-43fb-9b2c-e87dd91f1681",
-                "title": "IBM Randori: Get Services",
+                "title": "IBM Randori: Get Service List",
                 "resources": [
                   "alerts"
                 ],
@@ -559,7 +559,7 @@
             {
               "uuid": "61c2a755-efc4-433b-bdbc-6394a41db48f",
               "@type": "WorkflowStep",
-              "name": "Get Services",
+              "name": "Get Service List",
               "description": null,
               "status": null,
               "arguments": {
@@ -572,7 +572,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_services",
-                "operationTitle": "Get Services",
+                "operationTitle": "Get Service List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -588,7 +588,7 @@
               "uuid": "f4c23874-fe55-4ffb-9d28-9f96019cfcef",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Services",
+              "name": "Start-> Get Service List",
               "sourceStep": "/api/3/workflow_steps/1515560a-7ef0-4d54-aad6-0f66535e6ead",
               "targetStep": "/api/3/workflow_steps/61c2a755-efc4-433b-bdbc-6394a41db48f"
             }
@@ -766,7 +766,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves policies based on the query, limit, offset parameter you have specified.",
-          "name": "Get Policy",
+          "name": "Get Policy List",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -787,7 +787,7 @@
               "status": null,
               "arguments": {
                 "route": "d9a8ef04-243c-48e8-b183-6f572a14dddb",
-                "title": "IBM Randori: Get Policy",
+                "title": "IBM Randori: Get Policy List",
                 "resources": [
                   "alerts"
                 ],
@@ -808,7 +808,7 @@
             {
               "uuid": "80c6b6eb-b1d7-44ae-8c00-d5dd7f6e38ab",
               "@type": "WorkflowStep",
-              "name": "Get Policy",
+              "name": "Get Policy List",
               "description": null,
               "status": null,
               "arguments": {
@@ -821,7 +821,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_policy",
-                "operationTitle": "Get Policy",
+                "operationTitle": "Get Policy List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -837,7 +837,7 @@
               "uuid": "81d4521b-5588-4313-80a9-4b1be802407d",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Policy",
+              "name": "Start-> Get Policy List",
               "sourceStep": "/api/3/workflow_steps/c9782333-6711-4d73-bca7-a9562a38e1b2",
               "targetStep": "/api/3/workflow_steps/80c6b6eb-b1d7-44ae-8c00-d5dd7f6e38ab"
             }
@@ -849,7 +849,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves report based on the query, limit, offset parameter you have specified.",
-          "name": "Get Report",
+          "name": "Get Report List",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -870,7 +870,7 @@
               "status": null,
               "arguments": {
                 "route": "67b33d97-c7ea-40d1-a968-e95437f25db5",
-                "title": "IBM Randori: Get Report",
+                "title": "IBM Randori: Get Report List",
                 "resources": [
                   "alerts"
                 ],
@@ -891,7 +891,7 @@
             {
               "uuid": "c01f3588-653f-41ff-ae22-43c06da5e7a8",
               "@type": "WorkflowStep",
-              "name": "Get Report",
+              "name": "Get Report List",
               "description": null,
               "status": null,
               "arguments": {
@@ -904,7 +904,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_report",
-                "operationTitle": "Get Report",
+                "operationTitle": "Get Report List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -920,7 +920,7 @@
               "uuid": "254d044f-6b75-4859-9047-6464d27eb30f",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Report",
+              "name": "Start-> Get Report List",
               "sourceStep": "/api/3/workflow_steps/05f7c76e-e40e-490e-a931-abc09d8a2155",
               "targetStep": "/api/3/workflow_steps/c01f3588-653f-41ff-ae22-43c06da5e7a8"
             }
@@ -932,7 +932,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves statistics based on the query, limit, offset parameter you have specified.",
-          "name": "Get Statistics",
+          "name": "Get Statistics List",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -953,7 +953,7 @@
               "status": null,
               "arguments": {
                 "route": "4a0bbc18-d2cb-4190-8cc5-9e617d09c21f",
-                "title": "IBM Randori: Get Statistics",
+                "title": "IBM Randori: Get Statistics List",
                 "resources": [
                   "alerts"
                 ],
@@ -974,7 +974,7 @@
             {
               "uuid": "ca7672b6-e928-4b54-8c86-ff58ed7a4c43",
               "@type": "WorkflowStep",
-              "name": "Get Statistics",
+              "name": "Get Statistics List",
               "description": null,
               "status": null,
               "arguments": {
@@ -987,7 +987,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_statistics",
-                "operationTitle": "Get Statistics",
+                "operationTitle": "Get Statistics List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -1003,7 +1003,7 @@
               "uuid": "3345e566-f0c2-47d4-9eff-fdeb1f15c4c6",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Statistics",
+              "name": "Start-> Get Statistics List",
               "sourceStep": "/api/3/workflow_steps/c4d19747-0d85-4882-86f8-c3ac2f914227",
               "targetStep": "/api/3/workflow_steps/ca7672b6-e928-4b54-8c86-ff58ed7a4c43"
             }
@@ -1015,7 +1015,7 @@
           "collection": "/api/3/workflow_collections/edd1696a-a8a5-4011-8c06-d16b64cf1606",
           "triggerLimit": null,
           "description": "Retrieves artifact based on the artifact UUID parameter you have specified.",
-          "name": "Get Artifact",
+          "name": "Get Artifact by UUID",
           "tag": "#IBM Randori",
           "recordTags": [
             "Ibm",
@@ -1036,7 +1036,7 @@
               "status": null,
               "arguments": {
                 "route": "91be1c8d-6192-46fc-89d6-761796c5b99b",
-                "title": "IBM Randori: Get Artifact",
+                "title": "IBM Randori: Get Artifact by UUID",
                 "resources": [
                   "alerts"
                 ],
@@ -1057,7 +1057,7 @@
             {
               "uuid": "a3bfba94-ebf1-4d4b-9aa6-7ebfd35d9952",
               "@type": "WorkflowStep",
-              "name": "Get Artifact",
+              "name": "Get Artifact by UUID",
               "description": null,
               "status": null,
               "arguments": {
@@ -1067,7 +1067,7 @@
                 "version": "1.0.0",
                 "connector": "ibm-randori",
                 "operation": "get_artifact",
-                "operationTitle": "Get Artifact",
+                "operationTitle": "Get Artifact by UUID",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -1083,7 +1083,7 @@
               "uuid": "5d7476f4-9ef0-409d-99b7-5ad64f0cdd25",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Artifact",
+              "name": "Start-> Get Artifact by UUID",
               "sourceStep": "/api/3/workflow_steps/2961bfc2-85e6-41a5-a739-6cfdbd41d381",
               "targetStep": "/api/3/workflow_steps/a3bfba94-ebf1-4d4b-9aa6-7ebfd35d9952"
             }
